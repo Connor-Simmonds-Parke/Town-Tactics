@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * File: Town.cs
+ * Author: Connor Simmonds-Parke
+ * Date: 2022-03-19
+ * 
+ * Purpose: The main hub of the game. Almost every class feeds into this in some way.
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +32,7 @@ namespace Assets.GameCode
         Resource stone;
         Resource wood;
         Resource food;
+
         public List<Resource> resourceList;
 
         public List<Mission> availableMissions;

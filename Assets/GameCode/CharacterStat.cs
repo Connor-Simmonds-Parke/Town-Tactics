@@ -3,7 +3,7 @@
  * Author: Connor Simmonds-Parke
  * Date: 2022-02-12
  * 
- * Purpose: 
+ * Purpose: A single character stat. Has methods to alter its value, and various ways to create the class.
  * 
  */
 
@@ -17,11 +17,14 @@ namespace Assets.GameCode
 {
     public class CharacterStat
     {
+        #region Members
         //Members.
         private int value;
         private string description;
         private StatsList name;
+        #endregion
 
+        #region Constructors
         //Constructors.
 
         /// <summary>
@@ -34,6 +37,12 @@ namespace Assets.GameCode
             this.description = "No stat description, this was a default stat or mistake";
         }
 
+        /// <summary>
+        /// Creates a stat based on the name, value, and description given.
+        /// </summary>
+        /// <param name="statValue">Value of the stat.</param>
+        /// <param name="statName">Name of the stat.</param>
+        /// <param name="statDescription">Description of the stat.</param>
         public CharacterStat(int statValue, StatsList statName, string statDescription)
         {
             this.value = statValue;
@@ -41,19 +50,31 @@ namespace Assets.GameCode
             this.description = statDescription;
         }
 
+        /// <summary>
+        /// Creates a stat based on the name and value given.
+        /// </summary>
+        /// <param name="statValue">Value of the stat.</param>
+        /// <param name="statName">Name of the stat.</param>
         public CharacterStat(int statValue, StatsList statName)
         {
             this.value = statValue;
             this.name = statName;
             this.description = "No stat description, this was a default stat or mistake";
         }
+        #endregion
 
+        #region Methods         
         //Methods.
+        /// <summary>
+        /// Modifies the value of the stat.
+        /// </summary>
+        /// <param name="statValue">The stat to add or subtract.</param>
         public void ModifyValue(int statValue)
         {
             this.value += statValue;
         }
 
+        #region Getters and Setters
         //Getters and Setters.
         public int GetValue()
         {
@@ -84,5 +105,7 @@ namespace Assets.GameCode
         {
             this.description = newDescription;
         }
-    }   
+        #endregion
+        #endregion
+    }
 }

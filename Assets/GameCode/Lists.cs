@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * File: Lists.cs
+ * Author: Connor Simmonds-Parke
+ * Date: 2022-02-19
+ * 
+ * Purpose: Holds an enum List for nearly everything. Most constructors and methods look for their respective enum list to create or modify the class.
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

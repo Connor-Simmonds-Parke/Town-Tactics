@@ -3,7 +3,7 @@
  * Author: Connor Simmonds-Parke
  * Date: 2022-02-27
  * 
- * Purpose: 
+ * Purpose: Generic Building for specific buildings to inherit from.
  * 
  */
 

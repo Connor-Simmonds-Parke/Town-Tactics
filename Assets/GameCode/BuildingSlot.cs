@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * File: BuildingSlot.cs
+ * Author: Connor Simmonds-Parke
+ * Date: 2022-03-12
+ * 
+ * Purpose: The building slot for which specific buildings take up. Can build, upgrade, or remove buildings. A town only has a limited number of building slots.
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +19,7 @@ namespace Assets.GameCode
     {
         #region Members
         //Members.
-        private Building currentBuilding;
+        private Building currentBuilding;       //Current Building in the Building Slot.
         #endregion
 
         #region Constructors
@@ -23,6 +32,11 @@ namespace Assets.GameCode
 
         #region Methods
         //Methods.
+
+        /// <summary>
+        /// Checks if the Building Slot is empty.
+        /// </summary>
+        /// <returns>True if empty, false if not.</returns>
         public bool CheckIfEmpty()
         {
             bool isEmpty = false;
@@ -35,6 +49,11 @@ namespace Assets.GameCode
             return isEmpty;
         }
 
+        /// <summary>
+        /// First checks if the building slot is empty. If it is, builds
+        /// the specified building.
+        /// </summary>
+        /// <param name="newBuilding"></param>
         public void BuildBuilding(Building newBuilding)
         {
             if (CheckIfEmpty() == true)
@@ -43,6 +62,10 @@ namespace Assets.GameCode
             }
         }
 
+        /// <summary>
+        /// First checks to make sure the building slot isn't empty.
+        /// If it isn't, upgrades the current building.
+        /// </summary>
         public void UpgradeBuilding()
         {
             if (CheckIfEmpty() == false)
@@ -51,6 +74,9 @@ namespace Assets.GameCode
             }
         }
 
+        /// <summary>
+        /// Removes the current building.
+        /// </summary>
         public void RemoveBuilding()
         {
             this.currentBuilding = null;
@@ -58,6 +84,11 @@ namespace Assets.GameCode
 
         #region Getters and Setters
         //Getters and Setters.
+
+        /// <summary>
+        /// Gets the current building in the building slot.
+        /// </summary>
+        /// <returns></returns>
         public Building GetCurrentBuilding()
         {
             return this.currentBuilding;

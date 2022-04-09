@@ -3,7 +3,7 @@
  * Author: Connor Simmonds-Parke
  * Date: 2022-02-12
  * 
- * Purpose: 
+ * Purpose: Base code for a peice of equipment. Meant to be inherited from. 
  * 
  */
 

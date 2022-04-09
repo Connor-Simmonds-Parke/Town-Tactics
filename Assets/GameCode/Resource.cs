@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * File: Resource.cs
+ * Author: Connor Simmonds-Parke
+ * Date: 2022-03-17
+ * 
+ * Purpose: A resource and its acompanying value. Also holds and checks the turn end value as well.
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -38,11 +47,11 @@ namespace Assets.GameCode
         }
 
         /// <summary>
-        /// 
+        /// Creates a resource, its current value, and how much it changes at the end of a turn.
         /// </summary>
-        /// <param name="resource"></param>
-        /// <param name="initialValue"></param>
-        /// <param name="turnValue"></param>
+        /// <param name="resource">Resource to be created.</param>
+        /// <param name="initialValue">The initial value of the resource.</param>
+        /// <param name="turnValue">The turn value of the resource.</param>
         public Resource(ResourceList resource, int initialValue, int turnValue)
         {
             this.name = resource;
@@ -55,6 +64,9 @@ namespace Assets.GameCode
         #region Methods
         //Methods.
 
+        /// <summary>
+        /// Updates the description of the resource.
+        /// </summary>
         private void UpdateDescription()
         {
             if (this.name == ResourceList.Gold)
@@ -79,16 +91,28 @@ namespace Assets.GameCode
             }
         }
 
+        /// <summary>
+        /// Alters the value of the resource.
+        /// </summary>
+        /// <param name="addValue">Value to add or subract.</param>
         public void ChangeValue(int addValue)
         {
             this.value += addValue;
         }
 
+        /// <summary>
+        /// Alters the amount the resource changes at the end of a turn.
+        /// </summary>
+        /// <param name="addTurnValue">Turn value to alter.</param>
         public void ChangeTurnValue(int addTurnValue)
         {
             this.turnValue += addTurnValue;
         }
 
+        /// <summary>
+        /// On turn end updates the resource value based on the
+        /// amount it changes at the end of a turn.
+        /// </summary>
         public void TurnEnd()
         {
             ChangeValue(this.turnValue);

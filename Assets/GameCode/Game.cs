@@ -1,3 +1,12 @@
+/*
+ * File: Game.cs
+ * Author: Connor Simmonds-Parke
+ * Date: 2022-03-12
+ * 
+ * Purpose: Testing for the game's UI and mechanics.
+ * 
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,9 +35,9 @@ namespace Assets.GameCode
 
         static int first = 0;
 
-        static TMP_Text tmpToolTip;
+        /*static TMP_Text tmpToolTip;
         static RectTransform imgToolTipTransform;
-        static GameObject imgToolTip;
+        static GameObject imgToolTip;*/
 
         // Start is called before the first frame update
         void Start()
@@ -45,11 +54,11 @@ namespace Assets.GameCode
             txtWood = GameObject.Find("txtWood").GetComponent<Text>();
             txtStone = GameObject.Find("txtStone").GetComponent<Text>();
             txtGold = GameObject.Find("txtGold").GetComponent<Text>();
-            imgToolTip = GameObject.Find("imgToolTip").GetComponent<GameObject>();
+            /*imgToolTip = GameObject.Find("imgToolTip").GetComponent<GameObject>();
             tmpToolTip = GameObject.Find("tmpToolTip").GetComponent<TMP_Text>();
-            imgToolTipTransform = GameObject.Find("imgToolTip").GetComponent<RectTransform>();
+            imgToolTipTransform = GameObject.Find("imgToolTip").GetComponent<RectTransform>();*/
 
-            ShowToolTip("Some Random Tool Tip Text");
+            //ShowToolTip("Some Random Tool Tip Text");
             if (first == 0)
             {
                 buildingSlots = new List<Button>();
@@ -341,7 +350,7 @@ namespace Assets.GameCode
             UpdateResources();
         }
 
-        public static void ShowToolTip(string toolTipString)
+        /*public static void ShowToolTip(string toolTipString)
         {
             imgToolTip.SetActive(true);
 
@@ -354,7 +363,7 @@ namespace Assets.GameCode
         public static void HideToolTip()
         {
             imgToolTip.SetActive(false);
-        }
+        }*/
     }
 }
 

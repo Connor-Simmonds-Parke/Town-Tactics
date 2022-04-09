@@ -11,6 +11,7 @@
 
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,26 +59,25 @@ namespace Assets.GameCode
 
         public Character(bool isRandom)
         {
-            Random random = new Random();
-
-            RaceList randomRace = (RaceList)(random.Next(Enum.GetNames(typeof(RaceList)).Length));
-            BodyColourList randomBodyColour = (BodyColourList)(random.Next(Enum.GetNames(typeof(BodyColourList)).Length));
-            BodySizeList randomBodySize = (BodySizeList)(random.Next(Enum.GetNames(typeof(BodySizeList)).Length));
-            HairColourList randomHairColour = (HairColourList)(random.Next(Enum.GetNames(typeof(HairColourList)).Length));
-            HairStyleList randomHairStyle = (HairStyleList)(random.Next(Enum.GetNames(typeof(HairStyleList)).Length));
-            EyeColourList randomEyeColour = (EyeColourList)(random.Next(Enum.GetNames(typeof(EyeColourList)).Length));
+            TraitList randomTrait = (TraitList)(UnityEngine.Random.Range(0, Enum.GetNames(typeof(TraitList)).Length));
+            RaceList randomRace = (RaceList)(UnityEngine.Random.Range(0, Enum.GetNames(typeof(RaceList)).Length));
+            BodyColourList randomBodyColour = (BodyColourList)(UnityEngine.Random.Range(0, Enum.GetNames(typeof(BodyColourList)).Length));
+            BodySizeList randomBodySize = (BodySizeList)(UnityEngine.Random.Range(0, Enum.GetNames(typeof(BodySizeList)).Length));
+            HairColourList randomHairColour = (HairColourList)(UnityEngine.Random.Range(0, Enum.GetNames(typeof(HairColourList)).Length));
+            HairStyleList randomHairStyle = (HairStyleList)(UnityEngine.Random.Range(0, Enum.GetNames(typeof(HairStyleList)).Length));
+            EyeColourList randomEyeColour = (EyeColourList)(UnityEngine.Random.Range(0, Enum.GetNames(typeof(EyeColourList)).Length));
             FacialHairList randomFacialHair = FacialHairList.None;
-            GenderList randomGender = (GenderList)(random.Next(Enum.GetNames(typeof(GenderList)).Length));
+            GenderList randomGender = (GenderList)(UnityEngine.Random.Range(0, Enum.GetNames(typeof(GenderList)).Length));
             Enum randomName;
 
             if (randomGender == GenderList.Male)
             {
-                randomName = (MaleNamesList)(random.Next(Enum.GetNames(typeof(MaleNamesList)).Length));
-                randomFacialHair = (FacialHairList)(random.Next(Enum.GetNames(typeof(FacialHairList)).Length));
+                randomName = (MaleNamesList)(UnityEngine.Random.Range(0, Enum.GetNames(typeof(MaleNamesList)).Length));
+                randomFacialHair = (FacialHairList)(UnityEngine.Random.Range(0, Enum.GetNames(typeof(FacialHairList)).Length));
             }
             else
             {
-                randomName = (FemaleNamesList)(random.Next(Enum.GetNames(typeof(FemaleNamesList)).Length));
+                randomName = (FemaleNamesList)(UnityEngine.Random.Range(0, Enum.GetNames(typeof(FemaleNamesList)).Length));
             }
 
             this.name = randomName.ToString();
@@ -91,6 +91,8 @@ namespace Assets.GameCode
             this.buffs = new List<CharacterBuff>();
             this.traits = new List<Trait>();
             this.equipment = new Equipment();
+
+            AddTrait(new Trait(randomTrait));
 
             UpdateItems();
         }

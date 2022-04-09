@@ -3,7 +3,7 @@
  * Author: Connor Simmonds-Parke
  * Date: 2022-02-12
  * 
- * Purpose: 
+ * Purpose: The race of a character. Can be changed (for now, just for character creation) and affects starting stats.
  * 
  */
 
@@ -33,7 +33,7 @@ namespace Assets.GameCode
         #region Constructors
         //Constructors.
         /// <summary>
-        /// 
+        /// Default constructor.
         /// </summary>
         public Race()
         {
@@ -43,9 +43,9 @@ namespace Assets.GameCode
         }
         
         /// <summary>
-        /// 
+        /// Creates a race and updates the information.
         /// </summary>
-        /// <param name="race"></param>
+        /// <param name="race">Race to be created.</param>
         public Race(RaceList race)
         {
             ChangeRace(race);       
@@ -56,9 +56,9 @@ namespace Assets.GameCode
         //Methods.
 
         /// <summary>
-        /// 
+        /// Changes the race and updates the base stats and information.
         /// </summary>
-        /// <param name="race"></param>
+        /// <param name="race">Race to change to.</param>
         public void ChangeRace(RaceList race)
         {
             this.name = race;
@@ -66,9 +66,9 @@ namespace Assets.GameCode
         }
 
         /// <summary>
-        /// 
+        /// Updates the base stats and information of the race.
         /// </summary>
-        /// <param name="race"></param>
+        /// <param name="race">Race to update to.</param>
         public void UpdateRace(RaceList race)
         {
             if (race == RaceList.Human)
@@ -97,36 +97,36 @@ namespace Assets.GameCode
         //Getters and Setters.
 
         /// <summary>
-        /// 
+        /// Gets the race name.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Race name.</returns>
         public RaceList GetName()
         {
             return this.name;
         }
 
         /// <summary>
-        /// 
+        /// Sets a new race.
         /// </summary>
-        /// <param name="newRace"></param>
+        /// <param name="newRace">New race.</param>
         public void SetName(RaceList newRace)
         {
             this.name = newRace;
         }
 
         /// <summary>
-        /// 
+        /// Gets the race's description.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>String of race's description.</returns>
         public string GetDescription()
         {
             return this.description;
         }
 
         /// <summary>
-        /// 
+        /// Gets the base stats of the race.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Stats list of the base race stats.</returns>
         public CharacterStats GetRaceStats()
         {
             return this.raceStats;

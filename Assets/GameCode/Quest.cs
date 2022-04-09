@@ -1,4 +1,14 @@
-﻿using System;
+﻿/*
+ * File: Quest.cs
+ * Author: Connor Simmonds-Parke
+ * Date: 2022-03-25
+ * 
+ * Purpose: A quest for the player to complete to progress and/or a reward. Has specific requirements for triggering and completion. 
+ *          Uses the Quest Dictionary to build the information for the quest
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -56,9 +66,14 @@ namespace Assets.GameCode
             this.missionActivation = null;
         }
 
+        /// <summary>
+        /// Creates a Quest based on a given quest name. Uses the quest dictionary to 
+        /// update all the quest information.
+        /// </summary>
+        /// <param name="questName"></param>
+        /// <param name="questDictionary"></param>
         public Quest(QuestList questName, QuestDictionary questDictionary)
         {
-
             this.isCompleted = false;
             this.isActive = false;
         }

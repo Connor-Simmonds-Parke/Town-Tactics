@@ -3,7 +3,7 @@
  * Author: Connor Simmonds-Parke
  * Date: 2022-02-12
  * 
- * Purpose: 
+ * Purpose: Special traits for characters. Affects stats and some missions.
  * 
  */
 
@@ -38,6 +38,12 @@ namespace Assets.GameCode
         public Trait()
         {
             this.trait = TraitList.Strong;
+            UpdateTrait();
+        }
+
+        public Trait(TraitList trait)
+        {
+            this.trait = trait;
             UpdateTrait();
         }
 

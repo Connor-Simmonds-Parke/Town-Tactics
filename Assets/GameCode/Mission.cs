@@ -1,4 +1,14 @@
-﻿using System;
+﻿/*
+ * File: Mission.cs
+ * Author: Connor Simmonds-Parke
+ * Date: 2022-04-12
+ * 
+ * Purpose: Mission that the player can send characters on. Holds the mission requirements, information, and rewards. Can add or remove a character
+ *          from the mission. When the mission duration is finished, checks to see if it was a success or not.
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,6 +42,10 @@ namespace Assets.GameCode
 
         #region Constructors
         //Constructors.
+
+        /// <summary>
+        /// Default Constructor. Creates a Mission with some default information.
+        /// </summary>
         public Mission()
         {
             this.name = MissionList.TownPatrol;
@@ -54,6 +68,12 @@ namespace Assets.GameCode
             this.missionReport = "";
         }
         
+        /// <summary>
+        /// Creates a mission based on the given mission name.
+        /// Uses the Mission Dictionary to fill in the mission information.
+        /// </summary>
+        /// <param name="missionName">Mission Name.</param>
+        /// <param name="missionDictionary">Mission Dictionary.</param>
         public Mission(MissionList missionName, MissionDictionary missionDictionary)
         {
             this.name = missionName;
@@ -79,10 +99,18 @@ namespace Assets.GameCode
 
         #region Methods
         //Methods.
+
+        /// <summary>
+        /// Assigns a character to the mission. A character assigned is effectively taken
+        /// out of the town's list of characters until the mission is over.
+        /// </summary>
+        /// <param name="characterToAdd">The character to assign to the mission.</param>
+        /// <returns>Bool of whether the character was assigned or not.</returns>
         public bool AssignCharacter(Character characterToAdd)
         {
             bool wasAssigned = false;
 
+            //Don't allow more than the max members on the mission.
             if (this.peopleOnMission.Count < this.maxPeople)
             {
                 peopleOnMission.Add(characterToAdd);
@@ -92,6 +120,12 @@ namespace Assets.GameCode
             return wasAssigned;
         }
 
+        /// <summary>
+        /// Removes a character from the mission. Town needs to handle the character to 
+        /// put them back into the available characters list.
+        /// </summary>
+        /// <param name="characterToRemove">Character to remove from the mission.</param>
+        /// <returns>Bool of whether the character was removed or not.</returns>
         public bool RemoveCharacter(Character characterToRemove)
         {
             bool wasRemoved = false;

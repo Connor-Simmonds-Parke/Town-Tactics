@@ -3,7 +3,7 @@
  * Author: Connor Simmonds-Parke
  * Date: 2022-02-12
  * 
- * Purpose: 
+ * Purpose: Temporary buffs/debuffs that affect a character. Temporarily alters stats, and can affect a mission depending on the mission's requirements.
  * 
  */
 

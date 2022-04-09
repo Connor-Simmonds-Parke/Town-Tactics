@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * File: MissionDictionary.cs
+ * Author: Connor Simmonds-Parke
+ * Date: 2022-04-15
+ * 
+ * Purpose: Holds all the information for every mission. To be loaded at the start of the game and used as reference. 
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

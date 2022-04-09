@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * File: QuestRequirements.cs
+ * Author: Connor Simmonds-Parke
+ * Date: 2022-03-28
+ * 
+ * Purpose: A small class to hold the requirements for either starting or completing a quest. Used in the Quest class.
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,8 +25,6 @@ namespace Assets.GameCode
         private List<Mission> missionRequirements;
         private int characterRequirements;
         private int turnRequirements;
-
-        //private List<>
         #endregion
 
         #region Constructors
@@ -61,6 +68,11 @@ namespace Assets.GameCode
         public int GetCharacterRequirements()
         {
             return this.characterRequirements;
+        }
+
+        public int GetTurnRequirements()
+        {
+            return this.turnRequirements;
         }
       
         #endregion

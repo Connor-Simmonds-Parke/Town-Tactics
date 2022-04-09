@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * File: ItemFeet.cs
+ * Author: Connor Simmonds-Parke
+ * Date: 2022-02-12
+ * 
+ * Purpose: Feet equipment. Affects the character's stats when equipped.
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

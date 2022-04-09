@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * File: BuildingTavern.cs
+ * Author: Connor Simmonds-Parke
+ * Date: 2022-03-12
+ * 
+ * Purpose: This class is a building, the Tavern, and it's two upgrades. It also holds the information for initial costs and upgrades.
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -78,6 +87,10 @@ namespace Assets.GameCode
 
         #region Methods
         //Methods.
+
+        /// <summary>
+        /// Updates the costs for each building.
+        /// </summary>
         public void UpdateCosts()
         {
             tavernCost = new List<KeyValuePair<ResourceList, int>>();
@@ -112,6 +125,10 @@ namespace Assets.GameCode
             base.costsList.Add(tempPair);
         }
 
+        /// <summary>
+        /// Upgrades the building by increasing the building level and calling
+        /// the method for upgrading to the (now) current building level.
+        /// </summary>
         public override void UpgradeBuilding()
         {
             if (base.level < base.maxLevel)
@@ -129,6 +146,9 @@ namespace Assets.GameCode
             }
         }
 
+        /// <summary>
+        /// Upgrades and updates the building to be an Inn.
+        /// </summary>
         public void UpgradeToInn()
         {
             base.name = INN_NAME;
@@ -136,6 +156,9 @@ namespace Assets.GameCode
             base.description = INN;
         }
 
+        /// <summary>
+        /// Upgrades and updaates the building to be a Stables.
+        /// </summary>
         public void UpgradeToStables()
         {
             base.name = STABLES_NAME;
